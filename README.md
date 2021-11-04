@@ -1,4 +1,4 @@
-Discord Bot Template
+# Discord Bot Template
 
 ### Installation
 1. Clone this repository
