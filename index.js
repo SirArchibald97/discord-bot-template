@@ -40,7 +40,7 @@ client.on("ready", async () => {
         try {
             console.log('Started refreshing application (/) commands.');
             await rest.put(
-                Routes.applicationCommands(client.id),
+                Routes.applicationCommands(client.user.id),
                 { body: commands },
             );
             console.log('Successfully reloaded application (/) commands.');
