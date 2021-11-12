@@ -7,7 +7,7 @@ const client = new Client({ partials: ["MESSAGE", "CHANNEL", "REACTION", "GUILD_
 // import your config file and attach it to the client object
 client.config = require("./config");
 // log your client into Discord using the token in your config file
-client.login(config.token);
+client.login(client.config.token);
 
 // create an event listener on the ready event, emitted when the bot is ready (connected to Discord)
 client.on("ready", async () => {
@@ -33,7 +33,7 @@ client.on("ready", async () => {
     }
     
     // create a new rest client
-    const rest = new REST({ version: '9' }).setToken(token);
+    const rest = new REST({ version: '9' }).setToken(client.config.token);
     // create an async wrapper to make the bot wait until this has finished before continuing
     (async () => {
         // attempt to register application commands
